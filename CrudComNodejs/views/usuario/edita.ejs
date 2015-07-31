@@ -1,0 +1,31 @@
+<% include ../home/header %>
+    <div class="container">
+
+      <div >
+        <h1 >Edição de usuario</h1>        
+      </div>
+      
+
+      <div class="row">    
+       <form method="post" action="/usuario/edita/<%= value._id %>"  class="col-xs-10" role="form">
+       	  <label>Nome :</label>
+       	  <input class="form-control" type="text" name="nome" value="<%= value.nome %>" />
+       	  <label>Email :</label>
+       	  <input class="form-control" type="email" name="email" value="<%= value.email %>" />
+       	  <label>Login :</label>
+       	  <input class="form-control" type="text" name="login" value="<%= value.login %>" />
+       	  <label>Senha :</label>
+       	  <input class="form-control" type="password" name="senha"value="<%= value.senha %>" />
+       	  <br/>
+       	  <button type="submit" class="btn btn-success">Atualizar</button>         
+       	  <a href="/usuario/usuarios" type="btn" class="btn btn-danger">Sair</a>
+
+          <input type="hidden" name="_method" value="put">
+       </form>
+          
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+<% include ../home/footer %>
+   

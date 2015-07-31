@@ -1,0 +1,41 @@
+<% include ../home/header %>
+    <div class="container">
+
+      <div >
+        <h1 >Usuarios</h1>        
+      </div>
+      <div class="row">
+      	<a href="/usuario/cadastro" type="btn" class="btn btn-info pull-right">Adicionar</a>
+      </div>
+
+      <div class="row">   
+      
+          <table class="table table-houver">
+			<thead>
+			<tr>
+			  <th>Nome</th>
+			  <th>Email</th>
+			  <th>Login</th>
+			  <th>Ações</th>
+			</tr>
+			</thead>
+			<tbody>
+			 <% lista.forEach(function(list) { %>
+				<tr>
+				  <td><%= list.nome %></td>
+				  <td><%= list.email %></td>
+				  <td><%= list.login %></td>
+				  <td>
+				  	<a type="btn" class="btn btn-primary" href="/usuario/edita/<%= list._id %>">Editar</a>	
+				  	<a type="btn" class="btn btn-primary" href="/usuario/mostrar/<%= list._id %>">Mostar</a>			
+				  </td>
+				</tr>			
+			  <% }); %>	
+			</tbody>
+		</table>
+       </form>
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+<% include ../home/footer %>
+   

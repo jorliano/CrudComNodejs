@@ -1,0 +1,31 @@
+<% include ../home/header %>
+    <div class="container">
+
+      <div >
+        <h1 >Usuario</h1>        
+      </div>
+      
+
+      <div class="row">    
+       <form method="post" action="/usuario/mostrar/<%= value._id %>"  class="col-xs-10" role="form">
+        <h3>  <label>Nome : <%= value.nome %></label>
+          <br/>        
+          <label>Email : <%= value.email %></label>
+          <br/>          
+          <label>Login : <%= value.login %></label>
+          <br/>  
+          <label>Senha : <%= value.senha %></label>
+          <br/>          
+        </h3>  
+          <button type="submit" class="btn btn-danger">Deletar</button>         
+          <a href="/usuario/usuarios" type="btn" class="btn btn-danger">Sair</a>
+
+          <input type="hidden" name="_method" value="delete">
+       </form>
+          
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+<% include ../home/footer %>
+   
